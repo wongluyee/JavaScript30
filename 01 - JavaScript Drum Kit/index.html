@@ -64,9 +64,9 @@
     const key = document.querySelector(`key[data-key="${e.keyCode}"]`);
     
     if (!audio) return; //stop the function from running all together
+    key.classList.add('playing'); //aadd border and enlarge the font size a bit when played
     audio.currentTime = 0; //rewind to the start
     audio.play();
-    key.classList.add('playing'); //transform (add border and enlarge the font size a bit) when played
   }
   
   function removeTransition(e){
