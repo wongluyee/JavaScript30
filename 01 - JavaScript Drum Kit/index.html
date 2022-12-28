@@ -64,14 +64,14 @@
     const key = document.querySelector(`key[data-key="${e.keyCode}"]`);
     
     if (!audio) return; //stop the function from running all together
-    key.classList.add('playing'); //aadd border and enlarge the font size a bit when played
+    key.classList.add('playing'); //add border and enlarge the font size a bit when played
     audio.currentTime = 0; //rewind to the start
     audio.play();
   }
   
   function removeTransition(e){
     if (e.propertyName !== 'transform') return; // skip it if it is not a transform
-    this.classList.remove('playing'); //"this" is the key you pressed
+    e.target.classList.remove('playing'); 
   }
   
   const keys = document.querySelectorAll('.key');
